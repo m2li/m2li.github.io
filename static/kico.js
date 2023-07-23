@@ -1,6 +1,20 @@
 
 var kico = {};
-
+//改变li内字体大小
+function changeFontSize(element, enlarge) {
+    if (enlarge) {
+      element.style.transform = "scale(1.1)"; // 放大字体大小
+    } else {
+      element.style.transform = "scale(1)"; // 恢复原本字体大小
+    }
+  }
+function changecnFontSize(element, enlarge) {
+    if (enlarge) {
+      element.style.transform = "scale(1.2)"; // 放大字体大小
+    } else {
+      element.style.transform = "scale(1)"; // 恢复原本字体大小
+    }
+  }
 // 弹框
 kico.notice_list = document.createElement("div");
 kico.notice_list.classList.add("bk-notice-list");
