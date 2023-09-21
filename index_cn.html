@@ -284,34 +284,34 @@
                     <div class="col-m-12">
                         <div class="layui-tab layui-tab-card">
                             
-                            <ul class="layui-tab-title">
+                            <ul class="layui-tab-title" onmouseleave="resetActiveTab()">
                                 <li class="layui-this" style="border-left: 2px solid #f8bd24;"
-                                    onmouseover="changecnFontSize(this.querySelector('h3'), true)"
+                                    onmouseover="changecnFontSize(this.querySelector('h3'), true),switchTab(0)"
                                     onmouseout="changecnFontSize(this.querySelector('h3'), false)">
                                     <h3>主持项目</h3>
                                 </li>
                                 <li style="border-left: 2px solid #f8bd24;"
-                                onmouseover="changecnFontSize(this.querySelector('h3'), true)"
+                                onmouseover="changecnFontSize(this.querySelector('h3'), true),switchTab(1)"
                                 onmouseout="changecnFontSize(this.querySelector('h3'), false)">
                                     <h3>代表性论文</h3>
                                 </li>
                                 <li style="border-left: 2px solid #f8bd24;"
-                                onmouseover="changecnFontSize(this.querySelector('h3'), true)"
+                                onmouseover="changecnFontSize(this.querySelector('h3'), true),switchTab(2)"
                                 onmouseout="changecnFontSize(this.querySelector('h3'), false)">
-                                    <h3>学术专著</h3>
+                                    <h3>学术专著（教材）</h3>
                                 </li>
                                 <li style="border-left: 2px solid #f8bd24;"
-                                onmouseover="changecnFontSize(this.querySelector('h3'), true)"
+                                onmouseover="changecnFontSize(this.querySelector('h3'), true),switchTab(3)"
                                 onmouseout="changecnFontSize(this.querySelector('h3'), false)">
                                     <h3>国家发明专利</h3>
                                 </li>
                                 <li style="border-left: 2px solid #f8bd24;border-right: 2px solid #f8bd24;"
-                                onmouseover="changecnFontSize(this.querySelector('h3'), true)"
+                                onmouseover="changecnFontSize(this.querySelector('h3'), true),switchTab(4)"
                                 onmouseout="changecnFontSize(this.querySelector('h3'), false)">
                                     <h3>软件著作权登记</h3>
                                 </li>
                             </ul>
-                            <div class="layui-tab-content">
+                            <div id="tabContent" class="layui-tab-content">
                                 <div class="layui-tab-item layui-show">
                                     <div class="row">
                                         <div class="col-m-12">
@@ -663,7 +663,7 @@
                     </div>
                     <h1 class="title">团队简介</h1>
                 </div>
-                <h3 style="padding: 0em 1em;">在校生</h3>
+                <h3 style="padding: 0em 1em;margin-top: 5px;">在校生</h3>
                 <br>
                 <div class="wrap">
 
@@ -671,60 +671,80 @@
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/杨逸峰师兄.jpg" />
-                                <p style="padding: 0;">2021级：杨逸峰</p>
-                                <p style="padding: 0;">研究方向：手语识别</p>
+                                <p style="padding: 0;margin-top: 5px;",>2021级：杨逸峰</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：手语识别</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/傅品贇师兄.jpg" />
-                                <p style="padding: 0;">2021级：傅品贇</p>
-                                <p style="padding: 0;">研究方向：谣言检测</p>
+                                <p style="padding: 0;margin-top: 5px;">2021级：傅品贇</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：谣言检测</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/曾蕾师姐.jpg" />
-                                <p style="padding: 0;">2021级：曾蕾</p>
-                                <p style="padding: 0;">研究方向：谣言检测</p>
+                                <p style="padding: 0;margin-top: 5px;">2021级：曾蕾</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：谣言检测</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/施佳师兄.jpg" />
-                                <p style="padding: 0;">2021级：施佳</p>
-                                <p style="padding: 0;">研究方向：阿尔兹海默症检测</p>
+                                <p style="padding: 0;margin-top: 5px;">2021级：施佳</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：阿尔兹海默症检测</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/刘凯.jpg" />
-                                <p style="padding: 0;">2022级：刘凯</p>
-                                <p style="padding: 0;">研究方向：手语识别</p>
+                                <p style="padding: 0;margin-top: 5px;">2022级：刘凯</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：手语识别</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/钟金鹏.jpg" />
-                                <p style="padding: 0;">2022级：钟金鹏</p>
-                                <p style="padding: 0;">研究方向：谣言检测</p>
+                                <p style="padding: 0;margin-top: 5px;">2022级：钟金鹏</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：谣言检测</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/刘苏敏.jpg" />
-                                <p style="padding: 0;">2022级：刘苏敏</p>
-                                <p style="padding: 0;">研究方向：人机对话</p>
+                                <p style="padding: 0;margin-top: 5px;">2022级：刘苏敏</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：人机对话</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/肖键.jpg" />
-                                <p style="padding: 0;">2022级：肖键</p>
-                                <p style="padding: 0;">研究方向：知识图谱</p>
+                                <p style="padding: 0;margin-top: 5px;">2022级：肖键</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：知识图谱</p>
                             </div>
                         </div>
-
+                        <div class="col-s-3">
+                            <div class="works-item">
+                                <img src="static/img/members/23 简伟强.jpg" />
+                                <p style="padding: 0;margin-top: 5px;">2023级：简伟强</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：</p>
+                            </div>
+                        </div>
+                        <div class="col-s-3">
+                            <div class="works-item">
+                                <img src="static/img/members/23 王淇.jpg" />
+                                <p style="padding: 0;margin-top: 5px;">2023级：王淇</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：</p>
+                            </div>
+                        </div>
+                        <div class="col-s-3">
+                            <div class="works-item">
+                                <img src="static/img/members/23 叶凌宇.jpg" />
+                                <p style="padding: 0;margin-top: 5px;">2023级：叶凌宇</p>
+                                <p style="padding: 0;margin-bottom: 5px;">研究方向：</p>
+                            </div>
+                        </div>
 
                     </div>
                     <h3 style="padding: 0em 1em;">毕业生</h3>
