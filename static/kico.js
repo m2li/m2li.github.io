@@ -15,6 +15,40 @@ function changecnFontSize(element, enlarge) {
       element.style.transform = "scale(1)"; // 恢复原本字体大小
     }
   }
+
+
+//切换tab
+var activeIndex = 0; // 记录当前活动标签的索引
+
+function switchTab(index) {
+  var tabContent = document.getElementById("tabContent");
+  var tabItems = tabContent.getElementsByClassName("layui-tab-item");
+  
+  for (var i = 0; i < tabItems.length; i++) {
+    if (i === index) {
+      tabItems[i].classList.add("layui-show");
+    } else {
+      tabItems[i].classList.remove("layui-show");
+    }
+  }
+  
+  activeIndex = index; // 更新当前活动标签的索引
+}
+
+function resetActiveTab() {
+  var tabContent = document.getElementById("tabContent");
+  var tabItems = tabContent.getElementsByClassName("layui-tab-item");
+
+  // 将除了当前活动标签之外的所有标签内容隐藏
+  for (var i = 0; i < tabItems.length; i++) {
+    if (i !== activeIndex) {
+      tabItems[i].classList.remove("layui-show");
+    }
+  }
+}
+
+
+
 // 弹框
 kico.notice_list = document.createElement("div");
 kico.notice_list.classList.add("bk-notice-list");
