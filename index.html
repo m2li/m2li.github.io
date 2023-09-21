@@ -263,20 +263,21 @@
                 <div class="row">
                     <div class="col-m-12">
                         <div class="layui-tab layui-tab-card">
-                            <ul class="layui-tab-title">
-                                <li class="layui-this" style="border-left: 2px solid #f8bd24;
-                                border-right: 2px solid #f8bd24;"
-                                    onmouseover="changeFontSize(this.querySelector('h3'), true)"
+                            
+                            <ul class="layui-tab-title" onmouseleave="resetActiveTab()">
+                                <li class="layui-this" style="border-left: 2px solid #f8bd24;"
+                                    onmouseover="changeFontSize(this.querySelector('h3'), true),switchTab(0)"
                                     onmouseout="changeFontSize(this.querySelector('h3'), false)">
                                     <h3>Principal Investigator of Projects</h3>
                                 </li>
-                                <li style="border-right: 2px solid #f8bd24;"
-                                    onmouseover="changeFontSize(this.querySelector('h3'), true)"
-                                    onmouseout="changeFontSize(this.querySelector('h3'), false)">
+                                <li style="border-left: 2px solid #f8bd24;"
+                                onmouseover="changeFontSize(this.querySelector('h3'), true),switchTab(1)"
+                                onmouseout="changeFontSize(this.querySelector('h3'), false)">
                                     <h3>Selected Publications</h3>
                                 </li>
+                               
                             </ul>
-                            <div class="layui-tab-content">
+                            <div id="tabContent" class="layui-tab-content">
                                 <div class="layui-tab-item layui-show">
                                     <div class="row">
                                         <div class="col-m-12">
@@ -590,7 +591,7 @@
                     </div>
                     <h1 class="title">Team Introduction</h1>
                 </div>
-                <h3 style="padding: 0em 1em;">Students at School</h3>
+                <h3 style="padding: 0em 1em;margin-top: 5px;">Students at School</h3>
                 <br>
                 <div class="wrap">
 
@@ -598,57 +599,78 @@
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/杨逸峰师兄.jpg" />
-                                <p style="padding: 0;">Grade 2021: Yifeng Yang</p>
-                                <p style="padding: 0;">Research Field：Sign Language Recognition</p>
+                                <p style="padding: 0;margin-top: 5px;">Grade 2021: Yifeng Yang</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field：Sign Language Recognition</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/傅品贇师兄.jpg" />
-                                <p style="padding: 0;">Grade 2021: Pinyun Fu</p>
-                                <p style="padding: 0;">Research Field：Rumor Detection</p>
+                                <p style="padding: 0;margin-top: 5px;">Grade 2021: Pinyun Fu</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field：Rumor Detection</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/曾蕾师姐.jpg" />
-                                <p style="padding: 0;">Grade 2021: Lei Zeng</p>
-                                <p style="padding: 0;">Research Field: Rumor Detection</p>
+                                <p style="padding: 0;margin-top: 5px;">Grade 2021: Lei Zeng</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field: Rumor Detection</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/施佳师兄.jpg" />
-                                <p style="padding: 0;">Grade 2021: Jia Shi</p>
-                                <p style="padding: 0;">Research Field: Alzheimer's Disease Detection</p>
+                                <p style="padding: 0;margin-top: 5px;">Grade 2021: Jia Shi</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field: Alzheimer's Disease Detection</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/刘凯.jpg" />
-                                <p style="padding: 0;">Grade 2022: Kai Liu</p>
-                                <p style="padding: 0;">Research Field: Sign Language Recognition</p>
+                                <p style="padding: 0;margin-top: 5px;">Grade 2022: Kai Liu</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field: Sign Language Recognition</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/钟金鹏.jpg" />
-                                <p style="padding: 0;">Grade 2022: Jinpeng Zhong</p>
-                                <p style="padding: 0;">Research Field: Rumor Detection</p>
+                                <p style="padding: 0;margin-top: 5px;">Grade 2022: Jinpeng Zhong</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field: Rumor Detection</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/刘苏敏.jpg" />
-                                <p style="padding: 0;">Grade 2022: Suming Liu</p>
-                                <p style="padding: 0;">Research Field: Dialogue Model</p>
+                                <p style="padding: 0;margin-top: 5px;">Grade 2022: Suming Liu</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field: Dialogue Model</p>
                             </div>
                         </div>
                         <div class="col-s-3">
                             <div class="works-item">
                                 <img src="static/img/members/肖键.jpg" />
-                                <p style="padding: 0;">Grade 2022: Jian Xiao</p>
-                                <p style="padding: 0;">Research Field: Knowledge Graph</p>
+                                <p style="padding: 0;margin-top: 5px;">Grade 2022: Jian Xiao</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field: Knowledge Graph</p>
+                            </div>
+                        </div>
+                        <div class="col-s-3">
+                            <div class="works-item">
+                                <img src="static/img/members/23 简伟强.jpg" />
+                                <p style="padding: 0;margin-top: 5px;">Grade 2023:Weiqiang Jian</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field:</p>
+                            </div>
+                        </div>
+                        <div class="col-s-3">
+                            <div class="works-item">
+                                <img src="static/img/members/23 王淇.jpg" />
+                                <p style="padding: 0;margin-top: 5px;">Grade 2023:Qi Wang</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field:</p>
+                            </div>
+                        </div>
+                        <div class="col-s-3">
+                            <div class="works-item">
+                                <img src="static/img/members/23 叶凌宇.jpg" />
+                                <p style="padding: 0;margin-top: 5px;">Grade 2023:Lingyu Ye</p>
+                                <p style="padding: 0;margin-bottom: 5px;">Research Field:</p>
                             </div>
                         </div>
 
